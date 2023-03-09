@@ -1,8 +1,8 @@
-public class List {
+public class Lista {
     int [] vetor_elementos;
     int numero_elementos;
 
-    public List(int t){
+    public Lista(int t){
         vetor_elementos = new int [t];
         numero_elementos = 0;
 
@@ -31,7 +31,7 @@ public class List {
 }
 
 public void inverter(){
-        List aux = new List(numero_elementos);
+        Lista aux = new Lista(numero_elementos);
 
         for (int i = 0; i < getQuantidade(); i++){
             aux.adicionar_inicio(retornarElemento(i));
@@ -44,7 +44,7 @@ public void inverter(){
 
 
     public void palindromo(){
-        List aux = new List(numero_elementos);
+        Lista aux = new Lista(numero_elementos);
         int cont = 0;
 
         for(int i = 0; i < getQuantidade(); i++){
@@ -164,7 +164,7 @@ public void inverter(){
 
     public void printVector(){
         for (int j = 0; j < numero_elementos; j++) {
-            System.out.println("Vetor na posição " +j+ " = "+vetor_elementos[j]);
+            System.out.print(vetor_elementos[j] + " ");
         }
     }
 
