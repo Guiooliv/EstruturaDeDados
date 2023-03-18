@@ -7,10 +7,10 @@ public class Fila {
         numero_elementos = 0;
     }
 
-    public boolean listaVazia(){
-        if(numero_elementos == 0){
+    public boolean listaVazia() {
+        if (numero_elementos == 0) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
@@ -60,5 +60,18 @@ public class Fila {
         for (int j = 0; j < numero_elementos; j++) {
             System.out.println("Vetor na posição "+j+ " = "+vetor_elementos[j]);
         }
+    }
+
+    public int maior(){
+        int maior = retornarElemento();
+
+        for(int i = 0; i < getQuantidade(); i++){
+            if(maior < retornarElemento()){
+                maior = retornarElemento();
+            }
+            enfileirar(desenfileirar());
+        }
+
+        return maior;
     }
 }

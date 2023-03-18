@@ -45,18 +45,20 @@ public class Pilha {
             return elemento_removido;
         }
     }
+
     public int getQuantidade(){
         return numero_elementos;
     }
+
+
     public int retornarElemento(){
         return vetor_elementos[numero_elementos-1];
     }
+
 
     public void printVector(){
         for (int j = numero_elementos - 1; j >= 0; j--) {
             System.out.println(vetor_elementos[j]);
         }
     }
-
-
 }
