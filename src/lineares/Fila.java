@@ -1,3 +1,5 @@
+package lineares;
+
 public class Fila {
     int vetor_elementos[];
     int numero_elementos;
@@ -64,14 +66,12 @@ public class Fila {
 
     public int maior(){
         int maior = retornarElemento();
-
         for(int i = 0; i < getQuantidade(); i++){
             if(maior < retornarElemento()){
                 maior = retornarElemento();
             }
             enfileirar(desenfileirar());
         }
-
         return maior;
     }
 }

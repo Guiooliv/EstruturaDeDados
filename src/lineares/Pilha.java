@@ -1,6 +1,8 @@
+package lineares;
+
 public class Pilha {
 
-    int vetor_elementos[];
+    int[] vetor_elementos;
     int numero_elementos;
 
     public Pilha(int t){
@@ -61,4 +63,29 @@ public class Pilha {
             System.out.println(vetor_elementos[j]);
         }
     }
+
+    public void removerTodos(){
+        for(int i = getQuantidade() - 1; i >= 0; i--){
+            desempilhar();
+        }
+    }
+
+    public void duplicar_pares(){
+        int par = 0;
+
+        Pilha aux = new Pilha(getQuantidade());
+
+        for(int i = getQuantidade(); i > 0; i--){
+            aux.empilhar(desempilhar());
+        }
+
+        for(int j = aux.getQuantidade(); j > 0 ; j--){
+            empilhar(aux.desempilhar());
+            if(retornarElemento() % 2 == 0){
+                par = retornarElemento();
+                empilhar(par);
+            }
+        }
+    }
 }
+
