@@ -2,9 +2,11 @@ package Encadeadas;
 
 public class Lista {
     No inicio_lista;
+    int numero_elementos;
 
     public Lista(){
         inicio_lista = null;
+        numero_elementos = 1;
     }
 
     public boolean lista_vazia(){
@@ -21,6 +23,7 @@ public class Lista {
             novo.proximo_no = inicio_lista;
         }
             inicio_lista = novo;
+            numero_elementos += 1;
     }
 
     public void adicionar_final(No e){
@@ -33,6 +36,7 @@ public class Lista {
                 auxiliar = auxiliar.proximo_no;
             }
             auxiliar.proximo_no = novo;
+            numero_elementos += 1;
         }
     }
 
@@ -44,6 +48,7 @@ public class Lista {
             removido = inicio_lista;
             inicio_lista = inicio_lista.proximo_no;
         }
+        numero_elementos -= 1;
         return removido;
     }
 
@@ -60,6 +65,7 @@ public class Lista {
             }
             auxiliar.proximo_no = null;
         }
+        numero_elementos -= 1;
         return removido;
     }
 
@@ -80,6 +86,7 @@ public class Lista {
             } else {
                 novo.proximo_no = auxiliar.proximo_no;
                 auxiliar.proximo_no = novo;
+                numero_elementos += 1;
             }
         }
     }
@@ -105,6 +112,7 @@ public class Lista {
                 auxiliar.proximo_no = removido.proximo_no;
             }
         }
+        numero_elementos -= 1;
         return removido;
     }
 
@@ -114,5 +122,9 @@ public class Lista {
             System.out.print(aux.elemento_armazenado + " ");
             aux = aux.proximo_no;
         }
+    }
+
+    public int getQuantidade(){
+        return numero_elementos;
     }
 }
