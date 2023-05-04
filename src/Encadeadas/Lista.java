@@ -138,9 +138,9 @@ public class Lista {
 
     public int penultimo(){
         No aux = inicio_lista;
-        int cont = 1; int num = 0;
+        int num = 0;
         for(int i = 0; i < getQuantidade(); i++){
-            if(i == getQuantidade() - 1) {
+            if(i == getQuantidade() - 2) {
                 num = aux.elemento_armazenado;
             }
             aux = aux.proximo_no;
@@ -161,20 +161,12 @@ public class Lista {
     }
 
     public boolean repetidos(){
-        No aux = inicio_lista;
-        int count = 0;
-
         for(int i =0; i < getQuantidade(); i++){
-            if(aux.elemento_armazenado == aux.proximo_no.elemento_armazenado){
-                count++;
+            for(int j = i + 1; j < getQuantidade(); j++){
+                if(n_termo(i) == n_termo(j)){
+                    return true;
+                }
             }
-            aux = aux.proximo_no;
-            if(aux.proximo_no == null){
-                break;
-            }
-        }
-        if(count >= 1){
-            return true;
         }
         return false;
     }
