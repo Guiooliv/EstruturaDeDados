@@ -26,7 +26,7 @@ public class Main {
         System.out.println("qdd: " + l1.getQuantidade());
 
         System.out.println();
-        l1.remover_posicao(2);
+        l1.remover_posicao(3);
         l1.print_vector();
         System.out.println("qdd: " + l1.getQuantidade());
 

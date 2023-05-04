@@ -127,4 +127,55 @@ public class Lista {
     public int getQuantidade(){
         return numero_elementos;
     }
+
+    public void inverter(){
+        for(int i = 0; i < getQuantidade(); i++){
+            No aux = remover_final();
+            System.out.print(aux.elemento_armazenado + " ");
+            adicionar_inicio(aux);
+        }
+    }
+
+    public int penultimo(){
+        No aux = inicio_lista;
+        int cont = 1; int num = 0;
+        for(int i = 0; i < getQuantidade(); i++){
+            if(i == getQuantidade() - 1) {
+                num = aux.elemento_armazenado;
+            }
+            aux = aux.proximo_no;
+        }
+        return num;
+    }
+
+    public int n_termo(int n){ // igual ao retornar elemento
+        No aux = inicio_lista;
+        int num = 0;
+        for(int i = 0; i <= n; i++){
+            if(i == n) {
+                num = aux.elemento_armazenado;
+            }
+            aux = aux.proximo_no;
+        }
+        return num;
+    }
+
+    public boolean repetidos(){
+        No aux = inicio_lista;
+        int count = 0;
+
+        for(int i =0; i < getQuantidade(); i++){
+            if(aux.elemento_armazenado == aux.proximo_no.elemento_armazenado){
+                count++;
+            }
+            aux = aux.proximo_no;
+            if(aux.proximo_no == null){
+                break;
+            }
+        }
+        if(count >= 1){
+            return true;
+        }
+        return false;
+    }
 }
