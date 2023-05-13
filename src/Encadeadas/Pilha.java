@@ -61,7 +61,16 @@ public class Pilha {
         return numero_elementos;
     }
 
- // falta retornar elemento
-
+   public int retornar_elemento(){
+        int elemento = 0;
+        No aux = inicio_pilha;
+       for(int i = 0; i < getQuantidade(); i++){
+           if(i == getQuantidade() - 1){
+               elemento = aux.elemento_armazenado;
+           }
+           aux = aux.proximo_no;
+       }
+       return  elemento;
+   }
 
 }

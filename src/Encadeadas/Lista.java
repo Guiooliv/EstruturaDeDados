@@ -161,7 +161,7 @@ public class Lista {
     }
 
     public boolean repetidos(){
-        for(int i =0; i < getQuantidade(); i++){
+        for(int i = 0; i < getQuantidade(); i++){
             for(int j = i + 1; j < getQuantidade(); j++){
                 if(n_termo(i) == n_termo(j)){
                     return true;
