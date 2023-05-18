@@ -154,7 +154,6 @@ public class Lista {
     public void palindromo() {
         Lista aux = new Lista(getQuantidade());
         int cont = 0;
-
         for (int i = 0; i < getQuantidade(); i++) {
             aux.adicionar_inicio(retornarElemento(i));
         }

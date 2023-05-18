@@ -148,6 +148,22 @@ public class Lista {
         return num;
     }
 
+    public int retornar_posicao(int n){
+        No aux = inicio_lista;
+        int p = 0;
+        for(int i = 0; i < getQuantidade(); i++){
+            if(n == aux.elemento_armazenado){
+                p = i;
+            }
+            aux = aux.proximo_no;
+        }
+        return p;
+    }
+
+    public int retornar_meio(){
+        return n_termo(getQuantidade()/2);
+    }
+
     public int n_termo(int n){ // igual ao retornar elemento
         No aux = inicio_lista;
         int num = 0;
@@ -160,6 +176,17 @@ public class Lista {
         return num;
     }
 
+    public void remover_duplicados(){
+        No aux = inicio_lista;
+        for(int i = 0; i < getQuantidade(); i++){
+            for(int j = i + 1; j < getQuantidade(); j++){
+                if(n_termo(i) == n_termo(j)){
+                    remover_posicao(j);
+                }
+            }
+        }
+    }
+    
     public boolean repetidos(){
         for(int i = 0; i < getQuantidade(); i++){
             for(int j = i + 1; j < getQuantidade(); j++){

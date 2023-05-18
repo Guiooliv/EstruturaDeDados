@@ -7,9 +7,8 @@
     <list default="true" id="c1c21918-d0ec-42f6-91b5-d6549f06f8ce" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Encadeadas/Lista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Encadeadas/Lista.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Encadeadas/Main2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Encadeadas/TestesFilha_Pilha.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Encadeadas/Pilha.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Encadeadas/Pilha.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Encadeadas/Testes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Encadeadas/Testes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lineares/Lista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lineares/Lista.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +78,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/DuplamenteEncadeada/ListaDuplaEn.java</url>
           <line>75</line>
-          <properties class="DuplamenteEncadeada.ListaDuplaEn" method="printar">
+          <properties class="DuplamenteEncadeada.ListaDuplaEn">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
