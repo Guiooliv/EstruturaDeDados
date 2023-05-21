@@ -186,7 +186,7 @@ public class Lista {
             }
         }
     }
-    
+
     public boolean repetidos(){
         for(int i = 0; i < getQuantidade(); i++){
             for(int j = i + 1; j < getQuantidade(); j++){
@@ -196,5 +196,29 @@ public class Lista {
             }
         }
         return false;
+    }
+    
+    public int mais_repetidos(){
+        int maxFrenquencia = 0;
+        int elementoRecete = 0;
+
+        for (int i = 0; i < getQuantidade(); i++) {
+            int frequencia = 0;
+            int elemento = n_termo(i);
+            
+            for (int j = i + 1; j < getQuantidade(); j++) {
+                int proximoEle = n_termo(j);
+                if (elemento == proximoEle) {
+                    frequencia++;
+                }
+            }
+            
+            if (frequencia > maxFrenquencia) {
+                maxFrenquencia = frequencia;
+                elementoRecete = elemento;
+            }
+        }
+
+        return elementoRecete;
     }
 }

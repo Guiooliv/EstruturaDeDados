@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c1c21918-d0ec-42f6-91b5-d6549f06f8ce" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/DuplamenteEncadeada/DNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DuplamenteEncadeada/ListaDuplamenteEncadeada.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DuplamenteEncadeada/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Encadeadas/Lista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Encadeadas/Lista.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Encadeadas/Testes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Encadeadas/Testes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lineares/Lista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lineares/Lista.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +45,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/CursoUdemyCodigos&quot;
+    &quot;last_opened_file_path&quot;: &quot;D:/DiversosCodigos&quot;
   }
 }</component>
   <component name="RunManager">

@@ -17,10 +17,13 @@ public class Testes {
         l2.adicionar_final(new No(99));
         l2.adicionar_final(new No(3));
 
-        l3.adicionar_final(new No(4));
-        l3.adicionar_final(new No(5));
-        l3.adicionar_final(new No(5));
-        l3.adicionar_final(new No(4));
+        l3.adicionar_final(new No(9));
+        l3.adicionar_final(new No(9));
+        l3.adicionar_final(new No(8));
+        l3.adicionar_final(new No(8));
+        l3.adicionar_final(new No(8));
+        l3.adicionar_final(new No(7));
+        l3.adicionar_final(new No(7));
 
         System.out.println("retornando a n_posicao: " + l1.n_termo(0));
         System.out.println("retornando o meio da lista: " + l1.retornar_meio());
@@ -40,7 +43,7 @@ public class Testes {
         l2.print_vector();
 
         System.out.println("\n-------------------------");
-        System.out.println("A lista 3 é um palindromo?");
-        l3.palindromo();
+        System.out.print("Qual o elementos mais repetido da l3: " + l3.mais_repetidos());
+
     }
 }
