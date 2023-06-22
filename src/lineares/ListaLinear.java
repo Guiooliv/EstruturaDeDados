@@ -1,10 +1,12 @@
 package lineares;
 
-public class Lista {
+import Encadeadas.ListaEncade;
+
+public class ListaLinear {
     int[] vetor_elementos;
     int numero_elementos;
 
-    public Lista(int t) {
+    public ListaLinear(int t) {
         vetor_elementos = new int[t];
         numero_elementos = 0;
     }
@@ -23,7 +25,7 @@ public class Lista {
 
     public void adicionar_final(int e) {
         if (lista_cheia()) {
-            System.out.println("full structure!");
+            System.out.println("estrutura cheia!");
         } else {
             int index = numero_elementos;
             vetor_elementos[index] = e;
@@ -33,7 +35,7 @@ public class Lista {
 
     public int remover_final() {
         if (lista_vazia()) {
-            System.out.println("empty structure!");
+            System.out.println("Estrutura vazia!");
             return -1;
         } else {
             int index = numero_elementos - 1;
@@ -45,7 +47,7 @@ public class Lista {
 
     public void adicionar_inicio(int e) {
         if (lista_cheia()) {
-            System.out.println("Full structure!");
+            System.out.println("Estrutura cheia!");
         } else {
             for (int index = numero_elementos; index > 0; index--) {
                 vetor_elementos[index] = vetor_elementos[index - 1];
@@ -57,7 +59,7 @@ public class Lista {
 
     public int remover_inicio() {
         if (lista_vazia()) {
-            System.out.println("Empty structure!");
+            System.out.println("Estrutura vazia!");
             return -1;
         } else {
             int element_removed = vetor_elementos[0];
@@ -71,7 +73,7 @@ public class Lista {
 
     public void adicionar_posicao(int e, int i) {
         if (lista_cheia()) {
-            System.out.println("Full structure!");
+            System.out.println("Estrutura cheia!");
         } else {
             if (i <= 0) {
                 adicionar_inicio(e);
@@ -89,7 +91,7 @@ public class Lista {
 
     public int remover_posicao(int i) {
         if (lista_vazia()) {
-            System.out.println("empty Structure!");
+            System.out.println("Estrutura vazia!");
             return -1;
         } else {
             if (i <= 0) {
@@ -98,8 +100,8 @@ public class Lista {
                 return remover_final();
             } else {
                 int element_removed = vetor_elementos[i];
-                for (int index = i; index <= numero_elementos - 1; index++) {
-                    vetor_elementos[index - 1] = vetor_elementos[index];
+                for (int index = i; index < numero_elementos - 1; index++) {
+                    vetor_elementos[index] = vetor_elementos[index + 1];
                 }
                 numero_elementos = numero_elementos - 1;
                 return element_removed;
@@ -122,38 +124,39 @@ public class Lista {
         }
     }
 
-    public int soma(){
+    public int soma() {
         int soma = retornarElemento(0) + retornarElemento(1);
         return soma;
     }
 
 
-    public int meio(){
-       return retornarElemento(getQuantidade()/2);
+    public int meio() {
+        return retornarElemento(getQuantidade() / 2);
     }
 
-    public void ultimo_primeiro(){
+    public void ultimo_primeiro() {
         int aux = remover_final();
         adicionar_final(remover_inicio());
         adicionar_inicio(aux);
     }
 
-    public void inverter() {
-        Lista aux = new Lista(getQuantidade());
+   public void inverter(){
+       ListaLinear aux = new ListaLinear(getQuantidade());
 
-        for (int i = 0; i < getQuantidade(); i++) {
-            aux.adicionar_inicio(retornarElemento(i));
-        }
+       for (int i = 0; i < getQuantidade(); i++) {
+           aux.adicionar_inicio(retornarElemento(i));
+       }
 
-        for(int i = 0; i < getQuantidade(); i++){
+       for(int i = 0; i < getQuantidade(); i++){
            remover_inicio();
            adicionar_final(aux.retornarElemento(i));
-        }
-    }
+       }
+   }
 
     public void palindromo() {
-        Lista aux = new Lista(getQuantidade());
+        ListaLinear aux = new ListaLinear(getQuantidade());
         int cont = 0;
+
         for (int i = 0; i < getQuantidade(); i++) {
             aux.adicionar_inicio(retornarElemento(i));
         }
@@ -175,9 +178,46 @@ public class Lista {
         for (int i = 0; i < getQuantidade(); i++) {
             for (int j = i + 1; j < getQuantidade(); j++) {
                 if (retornarElemento(j) == retornarElemento(i)) {
-                    remover_posicao(j);
+                    remover_posicao(i);
+                }
+            }
+        }
+
+        for (int i = 0; i < getQuantidade(); i++) {
+            for (int j = i + 1; j < getQuantidade(); j++) {
+                if (retornarElemento(j) == retornarElemento(i)) {
+                    remover_posicao(i);
                 }
             }
         }
     }
+
+    public void copia(ListaLinear l2) {
+        for (int i = 0; i < getQuantidade(); i++) {
+            l2.adicionar_final(retornarElemento(i));
+        }
+    }
+
+    public void copia_semRepetido(ListaLinear l2){
+        for (int i = 0; i < getQuantidade(); i++) {
+            for (int j = i + 1; j < getQuantidade(); j++) {
+                if (retornarElemento(j) == retornarElemento(i)) {
+                    remover_posicao(i);
+                }
+            }
+        }
+
+        for (int i = 0; i < getQuantidade(); i++) {
+            for (int j = i + 1; j < getQuantidade(); j++) {
+                if (retornarElemento(j) == retornarElemento(i)) {
+                    remover_posicao(i);
+                }
+            }
+        }
+
+        for (int i = 0; i < getQuantidade(); i++) {
+            l2.adicionar_final(retornarElemento(i));
+        }
+    }
+
 }

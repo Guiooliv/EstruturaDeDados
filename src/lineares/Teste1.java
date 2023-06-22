@@ -1,6 +1,6 @@
 package lineares;
 
-public class Main {
+public class Teste1 {
     public static void main(String[] args) {
 
      Pilha p1 = new Pilha(10);

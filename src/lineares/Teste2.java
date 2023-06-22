@@ -1,6 +1,6 @@
 package lineares;
 
-public class Main2 {
+public class Teste2 {
     public static void main(String[] args) {
         Fila f1 = new Fila(5);
         f1.enfileirar(1);

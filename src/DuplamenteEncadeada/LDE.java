@@ -1,11 +1,11 @@
 package DuplamenteEncadeada;
 
-public class ListaDuplamenteEncadeada {
+public class LDE {
     private DNode inicio;
     private DNode fim;
     private int tamanho;
 
-    public ListaDuplamenteEncadeada() {
+    public LDE() {
         inicio = fim = null;
         tamanho = 0;
     }
@@ -18,7 +18,7 @@ public class ListaDuplamenteEncadeada {
         return tamanho == 0;
     }
 
-    public void inserir_pos(int pos, int v) {
+    public void inserir_pos(int pos, Object v) {
         if (pos < 0 || pos > tamanho) {
             System.out.println("POSICAO INVALIDA!!!!");
             return;
@@ -30,37 +30,37 @@ public class ListaDuplamenteEncadeada {
         } else {
             DNode aux = inicio;
             for (int cont = 0; cont < pos - 1; cont++) {
-                aux = aux.next;
+                aux = aux.getNext();
             }
-            DNode novoNo = new DNode(v, aux, aux.next);
-            aux.next.prev = novoNo;
-            aux.next = novoNo;
+            DNode novoNo = new DNode(v, aux, aux.getNext());
+            aux.getNext().setPrev(novoNo);
+            aux.setNext(novoNo);
             tamanho++;
         }
 
     }
 
-    public int removerPrimeiro() {
+    public Object removerPrimeiro() {
         if (!isEmpty()) {
-            int retorno = inicio.element;
-            inicio = inicio.next;
+            Object retorno = inicio.getElement();
+            inicio = inicio.getNext();
             tamanho--;
             if (isEmpty()) {
                 fim = null;
             } else {
-                inicio.prev = null;
+                inicio.setPrev(null);
             }
             return retorno;
         } else {
-            return -1;
+            return null;
         }
     }
 
 
-    public void inserirPrimeiro(int v) {
+    public void inserirPrimeiro(Object v) {
         DNode novoNo = new DNode(v, null, inicio);
         if (inicio != null) {
-            inicio.prev = novoNo;
+            inicio.setPrev(novoNo);
         } else {
             fim = novoNo;
         }
@@ -69,29 +69,29 @@ public class ListaDuplamenteEncadeada {
     }
 
     // remover ultimo
-    public int removerUltimo() {
+    public Object removerUltimo() {
         if (!isEmpty()) {
-            int retorno = fim.element;
-            fim = fim.prev;
+            Object retorno = fim.getElement();
+            fim = fim.getPrev();
             tamanho--;
             if (isEmpty()) {
                 inicio = null;
             } else {
-                fim.next = null;
+                fim.setNext(null);
             }
             return retorno;
         } else {
-            return -1;
+            return null;
         }
     }
 
     // inserir ultimo
-    public void inserirUltimo(int v) {
+    public void inserirUltimo(Object v) {
         DNode novoNo = new DNode(v, fim, null);
         if (isEmpty()) {
             inicio = novoNo;
         } else {
-            fim.next = novoNo;
+            fim.setNext(novoNo);
         }
         fim = novoNo;
         tamanho++;
@@ -100,15 +100,23 @@ public class ListaDuplamenteEncadeada {
     public void imprimir() {
         DNode aux = inicio;
         while (aux != null) {
-            System.out.print(aux.element + " ");
-            aux = aux.next;
+            System.out.print(aux.getElement() + " ");
+            aux = aux.getNext();
         }
     }
 
+    public void inverter(){
+       LDE aux = new LDE();
+
+       while(inicio != null){
+          aux.inserirUltimo(removerUltimo());
+      }
+       DNode noAux = aux.inicio;
+
+       while(noAux != null){
+           inserirUltimo(noAux.getElement());
+           noAux = noAux.getNext();
+       }
+
+    }
 }
-
-
-
-
-
-

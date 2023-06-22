@@ -1,10 +1,10 @@
 package Encadeadas;
 
-public class Lista {
+public class ListaEncade {
     No inicio_lista;
     int numero_elementos;
 
-    public Lista(){
+    public ListaEncade(){
         inicio_lista = null;
         numero_elementos = 1;
     }
@@ -176,8 +176,15 @@ public class Lista {
         return num;
     }
 
-    public void remover_duplicados(){
-        No aux = inicio_lista;
+    public void remover_repetidos(){
+        for(int i = 0; i < getQuantidade(); i++){
+            for(int j = i + 1; j < getQuantidade(); j++){
+                if(n_termo(i) == n_termo(j)){
+                    remover_posicao(j);
+                }
+            }
+        }
+
         for(int i = 0; i < getQuantidade(); i++){
             for(int j = i + 1; j < getQuantidade(); j++){
                 if(n_termo(i) == n_termo(j)){
@@ -187,7 +194,7 @@ public class Lista {
         }
     }
 
-    public boolean repetidos(){
+    public boolean verificar_repetidos(){
         for(int i = 0; i < getQuantidade(); i++){
             for(int j = i + 1; j < getQuantidade(); j++){
                 if(n_termo(i) == n_termo(j)){
@@ -197,10 +204,36 @@ public class Lista {
         }
         return false;
     }
-    
+
+    public boolean palindromo(){
+        No aux = inicio_lista;
+        ListaEncade l1 = new ListaEncade();
+        int cont = 0;
+
+        for(int i = 0; i < getQuantidade(); i++){
+            l1.adicionar_inicio(aux);
+            aux = aux.proximo_no;
+        }
+
+        aux = inicio_lista;
+        for(int i = 0 ; i < getQuantidade(); i ++){
+            if(l1.n_termo(i) == aux.elemento_armazenado){
+                cont++;
+            }
+            aux = aux.proximo_no;
+        }
+
+        if(cont == getQuantidade()){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
     public int mais_repetidos(){
         int maxFrenquencia = 0;
-        int elementoRecete = 0;
+        int elementoRecente = 0;
 
         for (int i = 0; i < getQuantidade(); i++) {
             int frequencia = 0;
@@ -212,13 +245,13 @@ public class Lista {
                     frequencia++;
                 }
             }
-            
+
             if (frequencia > maxFrenquencia) {
                 maxFrenquencia = frequencia;
-                elementoRecete = elemento;
+                elementoRecente = elemento;
             }
         }
 
-        return elementoRecete;
+        return elementoRecente;
     }
 }

@@ -2,7 +2,7 @@ package Encadeadas;
 
 public class Main {
     public static void main(String[] args) {
-        Lista l1 = new Lista();
+        ListaEncade l1 = new ListaEncade();
         l1.adicionar_final(new No(1));
         l1.adicionar_final(new No(2));
         l1.adicionar_final(new No(3));

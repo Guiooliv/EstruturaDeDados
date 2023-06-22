@@ -5,12 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c1c21918-d0ec-42f6-91b5-d6549f06f8ce" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/DuplamenteEncadeada/DNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DuplamenteEncadeada/ListaDuplamenteEncadeada.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DuplamenteEncadeada/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DuplamenteEncadeada/LDE.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lineares/Teste3.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Encadeadas/Lista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Encadeadas/Lista.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DuplamenteEncadeada/DNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DuplamenteEncadeada/DNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DuplamenteEncadeada/ListaDuplamenteEncadeada.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DuplamenteEncadeada/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DuplamenteEncadeada/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Encadeadas/Lista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Encadeadas/ListaEncade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Encadeadas/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Encadeadas/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Encadeadas/Testes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Encadeadas/Testes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lineares/Lista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lineares/ListaLinear.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lineares/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lineares/Teste1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lineares/Main2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lineares/Teste2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +92,22 @@
           </properties>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/lineares/ListaLinear.java</url>
+          <line>142</line>
+          <properties class="lineares.ListaLinear" method="inverter">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="l1.inicio_lista" />
+        <watch expression="this" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
